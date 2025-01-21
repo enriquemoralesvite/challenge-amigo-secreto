@@ -7,8 +7,12 @@ let amigos =[];
 function agregarAmigo() {
     
     let nombre = document.getElementById("amigo").value;    
+    if (nombre == "") {
+        alert("Por favor, ingrese un nombre valido");
+    }else{
     amigos.push(nombre); 
     document.getElementById("amigo").value = ""; //limpiar el input
+    }
 }  
 function sortearAmigo() {
     
