@@ -10,10 +10,15 @@ function agregarAmigo() {
     if (nombre == "") {
         alert("Por favor, ingrese un nombre valido");
     }else{
-    amigos.push(nombre); 
+    amigos.push(nombre);
     document.getElementById("amigo").value = ""; //limpiar el input
+    actualizarListaAmigos();
     }
 }  
+function actualizarListaAmigos() { 
+    let lista = document.getElementById("listaAmigos"); 
+    lista.innerHTML = amigos.map(amigo => `<li>${amigo}</li>`).join('');
+}
 function sortearAmigo() {
     
     
